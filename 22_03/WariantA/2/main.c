@@ -6,7 +6,7 @@ int foo(int n)
     if (n == 0 || n == 1) return 2;
     if (n > 0)
     {
-        if (n % 2 == 0) return foo(n - 1) + n;
+        if (n % 2 == 0) return foo((n / 2) - 1) + n;
         return 2 * foo(n - 1) - n;
     }
     return 0;
