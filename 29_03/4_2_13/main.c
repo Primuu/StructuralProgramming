@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int foo (unsigned int n) // Czy jest to poprawne rozwi¹zanie?
+int* foo (unsigned int n)
 {
-    int *tab;
-    return tab = (int*) malloc(n * sizeof(*tab));
+    int *tab = (int*) malloc(n * sizeof(int));
+    return tab;
 }
 
 

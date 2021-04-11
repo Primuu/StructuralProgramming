@@ -11,7 +11,7 @@ int main()
 {
     double n = 4;
     double *tab;
-    tab = (double*) malloc(n * sizeof(*tab));
+    tab = (double*) malloc(n * sizeof(double));
     foo(tab);
     return 0;
 }
