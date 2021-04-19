@@ -15,7 +15,7 @@ int main()
     int *wsk=tab-2;
     foo(wsk,5);
     int b = *(wsk+=4); //b=5
-    int c = b+2; // b=5  , c=7
+    int c = b+2;  // b=5  , c=7
     int d = b^c; // b=5  , c=7  , d=2
     int e = (wsk+=-1)[2]; // b=5  , c=7  , d=2  , e=2
     e = (d *= 8) + (c /= 3); // b=5  , c=2  , d=16  , e=18
