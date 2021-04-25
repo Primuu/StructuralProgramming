@@ -51,9 +51,11 @@ int main()
 
     values(n, tab1);
     values(n, tab2);
-    foo(n, tab1, tab2);
+
+    int *tabn = foo(n, tab1, tab2);
+
+    for(int i=0;i<8;i++) printf("%d\n",tabn[i]);
 
 
-    printf("Hello world!\n");
     return 0;
 }
