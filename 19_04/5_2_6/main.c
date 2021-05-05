@@ -17,7 +17,7 @@ void copy_text_n(char *text1, char *text2, int n)
     else
     for(i = 0; i < n; i++) //assume text2 has enough space
         {*(text2 + i) = *(text1 + i);}
-    *(text2 + i) = 0;
+
 }
 
 void copy_wtext_n(wchar_t *text1, wchar_t *text2, int n)
@@ -36,7 +36,7 @@ void copy_wtext_n(wchar_t *text1, wchar_t *text2, int n)
     else
     for(i = 0; i < n; i++) //assume text2 has enough space
         {*(text2 + i) = *(text1 + i);}
-    *(text2 + i) = 0;
+
 }
 
 
