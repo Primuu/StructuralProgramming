@@ -3,17 +3,11 @@
 
 int compare(char *text1, char *text2)
 {
-    int a, b;
+    int a, b, i;
     a = 0;
     b = 0;
-    while( *(text1++))
-    {
-        a++;
-    }
-    while( *(text2++))
-    {
-        b++;
-    }
+    for(i = 0; *(text1 + i)!= 0; i++)a++;
+    for(i = 0; *(text2 + i)!= 0; i++)b++;
     if(a != b) return 0;
     for(int i = 0; i < a; i++)
     {
@@ -24,17 +18,11 @@ int compare(char *text1, char *text2)
 
 int wcompare(wchar_t *text1, wchar_t *text2)
 {
-    int a, b;
+    int a, b, i;
     a = 0;
     b = 0;
-    while( *(text1++))
-    {
-        a++;
-    }
-    while( *(text2++))
-    {
-        b++;
-    }
+    for(i = 0; *(text1 + i)!= 0; i++)a++;
+    for(i = 0; *(text2 + i)!= 0; i++)b++;
     if(a != b) return 0;
     for(int i = 0; i < a; i++)
     {
