@@ -5,8 +5,10 @@ int is_in(char *text1, char *text2, int n)
 {
     int i;
     for(i = 0; (*(text1 + i) != 0) && (*(text2 + i) != 0); i++)
-        if (*(text1 + n + i) != *(text2 + i))
-            return 0;
+        {
+            if (*(text1 + n + i) != *(text2 + i))
+                return 0;
+        }
         if(*(text2 + i) == 0)
             return 1;
         return 0;
@@ -57,8 +59,10 @@ int is_in_w(wchar_t *text1, wchar_t *text2, int n)
 {
     int i;
     for(i = 0; (*(text1 + i) != 0) && (*(text2 + i) != 0); i++)
-        if (*(text1 + n + i) != *(text2 + i))
-            return 0;
+        {
+            if (*(text1 + n + i) != *(text2 + i))
+                return 0;
+        }
         if(*(text2 + i) == 0)
             return 1;
         return 0;

@@ -1,37 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-void cut_included(char *text1, char *text2)
+
+void cut_included1(char *text1, char *text2)
 {
     int i, j;
     int *is_in_tab = malloc(256 * sizeof(int));
 
+    for(i = 0; i < 256; i++)
+    {
+        *(is_in_tab + i) = 0;
+    }
+
     for(i = 0; *(text2 + i) != 0; i++)
-        *(is_in_tab + *(text2 + i)) = 1;
+        *(is_in_tab + (int)*(text2 + i)) = 1;
+
     for(i = 0, j = 0; *(text1 + i) != 0; i++)
-        if (*(is_in_tab + *(text1 + i)) == 0)
-            {
-                if(j < i)
-                    *(text1 + j) = *(text1 + i);
-                j++;
-            }
+        {
+            if (*(is_in_tab + (int)*(text1 + i)) == 0)
+                {
+                    if(j < i)
+                        *(text1 + j) = *(text1 + i);
+                    j++;
+                }
+        }
         *(text1 + j) = 0;
 }
-*/
-void cut_included(char *text1, char *text2)
+
+void cut_included2(char *text1, char *text2)
 {
     int i, j;
     int is_in_tab[256]={};
+
+    for(i = 0; i < 256; i++)
+    {
+        is_in_tab[i] = 0;
+    }
+
     for(i = 0; *(text2 + i) != 0; i++)
-        is_in_tab[*(text2 + i)] = 1;
+        is_in_tab[(int) * (text2 + i)] = 1;
+
     for(i = 0, j = 0; *(text1 + i) != 0; i++)
-        if (is_in_tab[*(text1 + i)] == 0)
+       {
+           if (is_in_tab[(int) * (text1 + i)] == 0)
             {
                 if(j < i)
                     *(text1 + j) = *(text1 + i);
                 j++;
             }
+       }
         *(text1 + j) = 0;
 }
 
@@ -54,12 +71,14 @@ void wcut_included(wchar_t *text1, wchar_t *text2)
 {
     int i, j;
     for(i = 0, j = 0; *(text1 + i) != 0; i++)
+    {
         if (!is_in_w(*(text1 + i), text2))
             {
                 if(j < i)
                     *(text1 + j) = *(text1 + i);
                 j++;
             }
+    }
         *(text1 + j) = 0;
 }
 
@@ -71,8 +90,19 @@ int main()
 
     scanf("%s", text1);
     scanf("%s", text2);
-    cut_included(text1, text2);
+    cut_included1(text1, text2);
     printf("%s\n", text1);
+
+
+
+    char *text3 = malloc(10 * sizeof(char));
+    char *text4 = malloc(5 * sizeof(char));
+
+    scanf("%s", text3);
+    scanf("%s", text4);
+    cut_included2(text3, text4);
+    printf("%s\n", text3);
+
 
 
     wchar_t *wtext1 = malloc(10 * sizeof(wchar_t));

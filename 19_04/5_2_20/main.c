@@ -8,7 +8,7 @@ char *what_time(int hour, int min, int sec)
     return hms;
 }
 
-char *w_what_time(int hour, int min, int sec)
+wchar_t *w_what_time(int hour, int min, int sec)
 {
     wchar_t *hms = malloc(9 * sizeof(wchar_t));
     swprintf(hms,9, L"%02d:%02d:%02d", hour, min, sec);

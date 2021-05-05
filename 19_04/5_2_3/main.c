@@ -16,7 +16,9 @@ int compare(char *text1, char *text2)
     }
     if(a != b) return 0;
     for(int i = 0; i < a; i++)
+    {
         if(*(text1 + i) != *(text2 + i))return 0;
+    }
     return 1;
 }
 
@@ -35,7 +37,9 @@ int wcompare(wchar_t *text1, wchar_t *text2)
     }
     if(a != b) return 0;
     for(int i = 0; i < a; i++)
+    {
         if(*(text1 + i) != *(text2 + i))return 0;
+    }
     return 1;
 }
 

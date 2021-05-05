@@ -25,7 +25,7 @@ int main()
 
     wscanf(L"%s",wtext);
     //wprintf(L"%s", wtext);
-    clear(wtext);
+    wclear(wtext);
     wprintf(L"%s\nTEST", wtext);
 
  return 0;
