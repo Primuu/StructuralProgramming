@@ -14,16 +14,11 @@ void zeros(int tab[][100], unsigned int n)
 
 int main()
 {
-    int** tab = (int**) malloc(sizeof(int*) * 1);
+    int n=4;
+    int tab[n][100];
+
     int i, j;
-    for (i = 0; i < 1; i++)
-    {
-        *(tab + i) = (int*) malloc(sizeof(int) * 100);
-    }
-
-
-
-    for (i = 0; i < 1; i++)
+    for (i = 0; i < n; i++)
     {
         for (j = 0; j < 100; j++)
         {
@@ -31,26 +26,26 @@ int main()
         }
     }
 
-    for (i = 0; i < 1; i++)
+    for (i = 0; i < n; i++)
     {
         for (j = 0; j < 100; j++)
         {
             printf("[%d,%d]=%d\n", i, j, *(*(tab + i)+j));
         }
+         printf("\n");
     }
 
-
-
-    zeros(tab, 1);
+    zeros(tab, n);
 
 
 
-    for (i = 0; i < 1; i++)
+    for (i = 0; i < n; i++)
     {
         for (j = 0; j < 100; j++)
         {
             printf("[%d,%d]=%d\n", i, j, *(*(tab + i)+j));
         }
+        printf("\n");
     }
     return 0;
 }
