@@ -49,19 +49,13 @@ int main()
     struct Prostokat pro = {5, 4};
     struct Trapez tra = {2, 1, 4};
 
-    struct Figura trojkat1 = {{trojkat1.wym.troj = tro}, 0};
+    struct Figura trojkat1 = {.wym.troj = tro, 0};
 
-    //struct Figura prostokat1 = {{prostokat1.wym.prost = pro}, 1};
-    struct Figura prostokat1;
-    prostokat1.wym.prost = pro;
-    prostokat1.fig = 1;
+    struct Figura prostokat1 = {.wym.prost = pro, 1};
 
-    struct Figura rownoleglobok1 = {{rownoleglobok1.wym.rown = row}, 2};
+    struct Figura rownoleglobok1 = {.wym.rown = row, 2};
 
-    //struct Figura trapez1 = {{trapez1.wym.trap = tro}, 0};
-    struct Figura trapez1;
-    trapez1.wym.trap = tra;
-    trapez1.fig = 3;
+    struct Figura trapez1 = {.wym.trap = tra, 0};
 
     printf("Pole -  trojkat = %lf\n", pole(trojkat1));
     printf("Pole -  prostakat = %lf\n", pole(prostokat1));

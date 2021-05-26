@@ -14,22 +14,22 @@ struct Student
 void foo(struct Student *s)
 {
     printf("Imie:");
-    scanf("%s", &s->imie);
+    scanf("%s", s->imie);
 
     printf("Nazwisko:");
-    scanf("%s", &s->nazwisko);
+    scanf("%s", s->nazwisko);
 
     printf("Adres:");
-    scanf("%s", &s->adres);
+    scanf("%s", s->adres);
 
     printf("Pesel:");
-    scanf("%s", &s->pesel);
+    scanf("%s", s->pesel);
 
     printf("Kierunek:");
-    scanf("%s", &s->kierunek);
+    scanf("%s", s->kierunek);
 
     printf("Numer legitymacji:");
-    scanf("%s", &s->numer_legitymacji);
+    scanf("%s", s->numer_legitymacji);
 }
 
 

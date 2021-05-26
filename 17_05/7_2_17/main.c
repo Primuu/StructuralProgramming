@@ -50,7 +50,7 @@ void wczytaj(struct Dane_osobowe tab[], int n)
         printf("Stan cywilny:");
         if(tab[i].plec == kobieta) printf("Wolna - 0, mezatka - 1:");
         else printf("Wolny - 0, zonaty - 1:");
-        scanf("%d", &tab[i].stan_cywilny.k);
+        scanf("%u", &tab[i].stan_cywilny.k);
     }
 }
 
@@ -61,16 +61,16 @@ void wypisz(struct Dane_osobowe tab[], int n)
     {
         printf("Imie:     %s\n", tab[i].imie);
         printf("Nazwisko: %s\n", tab[i].nazwisko);
-        if(tab[i].plec = kobieta) printf("Plec:     kobieta\n");
+        if(tab[i].plec == kobieta) printf("Plec:     kobieta\n");
         else printf("Plec:     mezczyzna\n");
-        if(tab[i].plec = kobieta)
+        if(tab[i].plec == kobieta)
         {
-            if(tab[i].stan_cywilny.k = 0 ) printf("Stan:     wolna\n\n");
+            if(tab[i].stan_cywilny.k == 0 ) printf("Stan:     wolna\n\n");
             else printf("Stan:     mezatka\n\n");
         }
         else
         {
-            if(tab[i].stan_cywilny.m = 0 ) printf("Stan:     wolny\n\n");
+            if(tab[i].stan_cywilny.m == 0 ) printf("Stan:     wolny\n\n");
             else printf("Stan:     zonaty\n\n");
         }
 
