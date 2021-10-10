@@ -114,24 +114,22 @@ struct element * przesunBezGlowy (struct element * Lista)
     return pom;
 }
 
-
-
-struct element * przesunZGlowa(struct element * Lista)
+void przesunZGlowa(struct element * Lista)
 {
-    struct element * pom;
-    pom = Lista->next;
-    if( (Lista == NULL) || (Lista->next == NULL))
-        return Lista;
-    while(Lista->next->next != NULL)
+    if( (Lista->next == NULL) || (Lista->next->next == NULL))
+        return;
+    struct element*wsk=Lista->next;
+    while(wsk->next->next != NULL)
     {
-        Lista = Lista->next;
+        wsk = wsk->next;
     }
-    Lista->next->next=pom;
-    pom=Lista->next;
-    Lista->next = NULL;
-    return pom;
-
+    struct element*wsk2=wsk->next;
+    wsk->next=NULL;
+    wsk2->next=Lista->next;
+    Lista->next=wsk2;
 }
+
+
 
 
 
