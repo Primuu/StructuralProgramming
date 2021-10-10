@@ -132,12 +132,11 @@ struct element * powtorzoneBezGlowy (struct element * Lista1, struct element * L
             pom2->i = pom->i;
         }
         pom = pom->next;
+        pom2->next = NULL;
     }
-    pom2->next = NULL;
+
     return Lista3;
 }
-
-
 
 
 
